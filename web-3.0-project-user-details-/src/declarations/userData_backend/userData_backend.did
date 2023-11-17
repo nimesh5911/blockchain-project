@@ -1,0 +1,22 @@
+type User = 
+ record {
+   address: text;
+   age: nat;
+   id: nat;
+   image: text;
+   name: text;
+ };
+type NewUser = 
+ record {
+   address: text;
+   age: nat;
+   image: text;
+   name: text;
+ };
+service : {
+  addUser: (NewUser) -> ();
+  deleteUser: (nat) -> ();
+  findByUserName: (text) -> (opt User);
+  getUser: () -> (vec User) query;
+  updateUserById: (nat, User) -> ();
+}
